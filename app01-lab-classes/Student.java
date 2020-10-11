@@ -93,6 +93,6 @@ public class Student
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", student ID: " + id + ", credits: " + credits + ", course: " + course);
     }
 }
