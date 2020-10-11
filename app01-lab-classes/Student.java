@@ -15,6 +15,8 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
+    // the student's course
+    private Course course;
     
     /**
      * Create a new student with a given name and ID number.
@@ -24,6 +26,7 @@ public class Student
         name = fullName;
         id = studentID;
         credits = 0;
+        course = course;
     }
 
     /**
@@ -75,6 +78,14 @@ public class Student
     public String getLoginName()
     {
         return name.substring(0,4) + id.substring(0,3);
+    }
+    
+    /**
+     * Assign a course to this student
+     */
+    public void assignCourse(Course newCourse)
+    { 
+        course = newCourse;
     }
     
     /**
