@@ -19,16 +19,38 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // option 1 of tickets.
+    private Ticket ticket1;
+    // option 2 of tickets.
+    private Ticket ticket2;
+    // option 3 of tickets.
+    private Ticket ticket3;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(Ticket newTicket1, Ticket newTicket2, Ticket newTicket3)
     {
-        price = cost;
+        price = 0;
         balance = 0;
         total = 0;
     }
+    
+    public void addTicket1(Ticket newTicket1)
+    {
+        ticket1 = newTicket1;
+    }
+    
+    public void addTicket2(Ticket newTicket2)
+    {
+        ticket2 = newTicket2;
+    }
+    
+    public void addTicket3(Ticket newTicket3)
+    {
+        ticket3 = newTicket3;
+    }
+    
 
     /**
      * @Return The price of a ticket.
