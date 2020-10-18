@@ -88,13 +88,7 @@ public class TicketMachine
                                amount);
         }
     }
-
-    
-    public void printAllTickets()
-    {
-        System.out.println ("Tickets" + tickets);
-    }
-    
+  
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
