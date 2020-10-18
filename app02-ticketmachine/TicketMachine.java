@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  * 
- * Modified by Student Name
+ * Modified by Luke Limkee
  */
 public class TicketMachine
 {
@@ -19,39 +19,34 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-    // option 1 of tickets.
-    private Ticket ticket1;
-    // option 2 of tickets.
-    private Ticket ticket2;
-    // option 3 of tickets.
-    private Ticket ticket3;
+    //list of avalible tickets
+    private Ticket[] tickets = new Ticket[3];
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(Ticket newTicket1, Ticket newTicket2, Ticket newTicket3)
+    public TicketMachine(int cost)
     {
-        price = 0;
+        price = cost;
         balance = 0;
         total = 0;
     }
     
-    public void addTicket1(Ticket newTicket1)
+    public void addAvalibleTicket1(Ticket newTicket)
     {
-        ticket1 = newTicket1;
+        tickets[0] = newTicket;
     }
     
-    public void addTicket2(Ticket newTicket2)
+    public void addAvalibleTicket2(Ticket newTicket)
     {
-        ticket2 = newTicket2;
+        tickets[1] = newTicket;
     }
     
-    public void addTicket3(Ticket newTicket3)
+    public void addAvalibleTicket3(Ticket newTicket)
     {
-        ticket3 = newTicket3;
+        tickets[2] = newTicket;
     }
     
-
     /**
      * @Return The price of a ticket.
      */
@@ -86,6 +81,12 @@ public class TicketMachine
         }
     }
 
+    
+    public void printAllTickets()
+    {
+        System.out.println ("Tickets" + tickets);
+    }
+    
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
