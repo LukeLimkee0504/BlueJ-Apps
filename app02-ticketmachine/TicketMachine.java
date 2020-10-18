@@ -21,13 +21,15 @@ public class TicketMachine
     private int total;
     //list of avalible tickets
     private Ticket[] tickets = new Ticket[3];
+    //selected ticket
+    private Ticket selectedTicket;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
+        price = 0;
         balance = 0;
         total = 0;
     }
@@ -47,6 +49,12 @@ public class TicketMachine
         tickets[2] = newTicket;
     }
     
+    public void selectTicket(Ticket newSelectedTicket)
+    {
+        selectedTicket = newSelectedTicket;
+        price = newSelectedTicket.getPrice();
+    }
+        
     /**
      * @Return The price of a ticket.
      */
