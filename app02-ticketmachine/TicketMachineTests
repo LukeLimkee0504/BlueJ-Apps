@@ -1,0 +1,40 @@
+Ticket Aylesbury = new Ticket("Aylesbury", 220);
+Ticket Amersham = new Ticket("Amersham", 300);
+Ticket HighWycombe = new Ticket("High Wycombe", 330);
+TicketMachine ticketMa1 = new TicketMachine(Aylesbury, Amersham, HighWycombe);
+ticketMa1.insertMoney(210);
+ticketMa1.selectTicket(Aylesbury);
+ticketMa1.printTicket();
+You must insert at least: 10 more cents.
+ticketMa1.insertMoney(500);
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Aylesbury
+# Sun Oct 18 17:50:10 BST 2020
+# 220 cents.
+##################
+
+ticketMa1.selectTicket(HighWycombe);
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# High Wycombe
+# Sun Oct 18 17:50:10 BST 2020
+# 330 cents.
+##################
+
+ticketMa1.insertMoney(200);
+ticketMa1.selectTicket(Amersham);
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Amersham
+# Sun Oct 18 17:50:10 BST 2020
+# 300 cents.
+##################
+
+ticketMa1.getBalance()
+    returned int 60
+ticketMa1.refundBalance()
+    returned int 60
