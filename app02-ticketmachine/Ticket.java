@@ -1,23 +1,42 @@
 
 /**
- * Write a description of class Ticket here.
+ * Class which can create ticket objects to be used with a ticket machine object.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Luke Limkee)
+ * @version (18.10.2020)
  */
 public class Ticket
 {
-    // instance variables - replace the example below with your own
+    // price of ticket
     private int price;
-    private String location;
+    //destination of ticket
+    private String destination;
 
     /**
      * Constructor for objects of class Ticket
      */
-    public Ticket(String ticketLocation, int ticketPrice)
+    public Ticket(String ticketDestination, int ticketPrice)
     {
        price = ticketPrice;
-       location = ticketLocation;
+       destination = ticketDestination;
        
     }
+    
+     /**
+     * Return The price of this ticket
+     */
+    public int getpPrice()
+    {
+        return price;
+    }
+    
+     /**
+     * Return The price of this ticket
+     */
+    public String getDestination()
+    {
+        return destination;
+    }
+
+
 }
