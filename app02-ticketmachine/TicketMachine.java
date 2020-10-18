@@ -11,6 +11,9 @@
  * 
  * Modified by Luke Limkee
  */
+
+import java.util.Date;
+
 public class TicketMachine
 {
     // The price of the currrently selected ticket of this machine.
@@ -19,6 +22,8 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    //the current date
+    private Date currentDate  = new Date();
     // The destination of the currently selected ticket
     private String destination;
     //list of avalible tickets
@@ -106,6 +111,7 @@ public class TicketMachine
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# "+ destination);
+            System.out.println("# "+ currentDate);
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
             System.out.println();
