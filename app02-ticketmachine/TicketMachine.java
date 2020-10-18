@@ -26,15 +26,19 @@ public class TicketMachine
     private Date currentDate  = new Date();
     // The destination of the currently selected ticket
     private String destination;
-    //list of avalible tickets
-    private Ticket[] tickets = new Ticket[3];
+    //First avalible ticket
+    private Ticket ticket1;
+    //Second avalible ticket
+    private Ticket ticket2;
+    //Third avalible ticket
+    private Ticket ticket3;
     //selected ticket
     private Ticket selectedTicket;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine()
+    public TicketMachine(Ticket ticket1,Ticket ticket2, Ticket ticket3 )
     {
         price = 0;
         destination = "none";
@@ -42,19 +46,19 @@ public class TicketMachine
         total = 0;
     }
     
-    public void addAvalibleTicket1(Ticket newTicket)
+    public void changeAvalibleTicket1(Ticket newTicket)
     {
-        tickets[0] = newTicket;
+        ticket1 = newTicket;
     }
     
-    public void addAvalibleTicket2(Ticket newTicket)
+    public void changeAvalibleTicket2(Ticket newTicket)
     {
-        tickets[1] = newTicket;
+        ticket2= newTicket;
     }
     
-    public void addAvalibleTicket3(Ticket newTicket)
+    public void changeAvalibleTicket3(Ticket newTicket)
     {
-        tickets[2] = newTicket;
+        ticket3 = newTicket;
     }
     
     public void selectTicket(Ticket newSelectedTicket)
