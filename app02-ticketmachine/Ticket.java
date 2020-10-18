@@ -19,7 +19,6 @@ public class Ticket
     {
        price = ticketPrice;
        destination = ticketDestination;
-       
     }
     
      /**
