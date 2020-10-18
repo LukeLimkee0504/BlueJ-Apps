@@ -25,7 +25,7 @@ public class Ticket
      /**
      * Return The price of this ticket
      */
-    public int getpPrice()
+    public int getPrice()
     {
         return price;
     }
