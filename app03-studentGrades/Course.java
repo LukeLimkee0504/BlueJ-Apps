@@ -56,6 +56,51 @@ public class Course
         }  
     }
 
+    
+   public String getModuleMark(int moduleNo)
+    {
+        if(moduleNo == 1)
+        {
+            return "" + module1.getMark();
+        }
+        if(moduleNo == 2)
+        {
+            return "" + module2.getMark();
+        }
+        if(moduleNo == 3)
+        {
+            return "" + module3.getMark();
+        }
+        if(moduleNo == 4)
+        {
+            return "" + module4.getMark();
+        }
+        
+        return "Please enter a valid module number (1-4)";
+    }
+    
+    public String getModuleTitle(int moduleNo)
+    {
+        if(moduleNo == 1)
+        {
+            return "" + module1.getTitle();
+        }
+        if(moduleNo == 2)
+        {
+            return "" + module2.getTitle();
+        }
+        if(moduleNo == 3)
+        {
+            return "" + module3.getTitle();
+        }
+        if(moduleNo == 4)
+        {
+            return "" + module4.getTitle();
+        }
+        
+        return "Please enter a valid module number (1-4)";
+    }
+    
     public void addMark(int mark, int moduleNo)
     {
         if(moduleNo == 1)
