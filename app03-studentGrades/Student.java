@@ -15,7 +15,7 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
-    
+    // the course they are enrolled on
     private Course course;
     
     /**
