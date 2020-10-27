@@ -35,6 +35,26 @@ public class Course
         module3 = new Module("Networking", "CO451");
         module4 = new Module("Computer Architectures", "CO450");
     }
+    
+    public void replaceModule(Module newModule, int moduleNo)
+    {
+      if(moduleNo == 1)
+        {
+            module1 = newModule;
+        }
+        if(moduleNo == 2)
+        {
+            module2 = newModule;
+        }
+        if(moduleNo == 3)
+        {
+            module3 = newModule;
+        }
+        if(moduleNo == 4)
+        {
+            module4 = newModule;
+        }  
+    }
 
     public void addMark(int mark, int moduleNo)
     {
@@ -61,6 +81,7 @@ public class Course
         finalMark = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
         return finalMark;
     }
+    
     /**
      * Prints out the details of a course
      */
