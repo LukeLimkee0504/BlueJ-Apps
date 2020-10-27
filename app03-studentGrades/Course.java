@@ -31,7 +31,9 @@ public class Course
         this.title = title;
         
         module1 = new Module("Programming Concepts", "CO452");
-        //todo add the others
+        module2 = new Module("Game Design", "CO459");
+        module3 = new Module("Networking", "CO451");
+        module4 = new Module("Computer Architectures", "CO450");
     }
 
     public void addMark(int mark, int moduleNo)
@@ -56,6 +58,22 @@ public class Course
         if((mark >= 0) && (mark < 40))
         {
             return Grades.F;
+        }
+        if((mark >= 0) && (mark >= 40) && (mark < 50))
+        {
+            return Grades.D;
+        }
+        if((mark >= 0) && (mark >= 50) && (mark < 60))
+        {
+            return Grades.C;
+        }
+        if((mark >= 0) && (mark >= 60) && (mark < 70))
+        {
+            return Grades.B;
+        }
+        if((mark >= 0) && (mark >= 70))
+        {
+            return Grades.A;
         }
         
         return Grades.X;
