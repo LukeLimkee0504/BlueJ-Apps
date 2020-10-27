@@ -56,11 +56,11 @@ public class Course
         }
     }
     
-    public void calculateFinalGrade()
+    public int getFinalMark()
     {
         finalMark = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
+        return finalMark;
     }
-    
     /**
      * Prints out the details of a course
      */
