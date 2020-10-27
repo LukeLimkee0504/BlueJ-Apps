@@ -42,36 +42,53 @@ public class Course
         {
             module1.awardMark(mark);
         }
+        if(moduleNo == 2)
+        {
+            module2.awardMark(mark);
+        }
+        if(moduleNo == 3)
+        {
+            module3.awardMark(mark);
+        }
+        if(moduleNo == 4)
+        {
+            module4.awardMark(mark);
+        }
+    }
+    
+    public void calculateFinalGrade()
+    {
+        finalMark = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
     }
     
     /**
      * Prints out the details of a course
      */
-    public void print()
+    public void printCourseDetails()
     {
         // put your code here
         System.out.println("Course " + codeNo + " - " + title);
     }
-    
-    public Grades convertToGrade(int mark)
+        
+    public Grades convertToGrade()
     {
-        if((mark >= 0) && (mark < 40))
+        if((finalMark>= 0) && (finalMark < 40))
         {
             return Grades.F;
         }
-        if((mark >= 0) && (mark >= 40) && (mark < 50))
+        if((finalMark >= 0) && (finalMark >= 40) && (finalMark < 50))
         {
             return Grades.D;
         }
-        if((mark >= 0) && (mark >= 50) && (mark < 60))
+        if((finalMark >= 0) && (finalMark >= 50) && (finalMark < 60))
         {
             return Grades.C;
         }
-        if((mark >= 0) && (mark >= 60) && (mark < 70))
+        if((finalMark >= 0) && (finalMark >= 60) && (finalMark < 70))
         {
             return Grades.B;
         }
-        if((mark >= 0) && (mark >= 70))
+        if((finalMark >= 0) && (finalMark >= 70))
         {
             return Grades.A;
         }
