@@ -92,15 +92,20 @@ public class Student
         this.course = course;
     }
     
-    public String printResults()
+    public void printResults()
     {
         if (credits > 89)
         {
-            return "Final Mark - " + course.getFinalMark() + " = Grade - " + course.convertToGrade();
+            System.out.println ("Final Mark - " + course.getFinalMark());
+            System.out.println ("Grade - " + course.convertToGrade());
+            System.out.println (course.getModuleTitle(1) + " - " + course.getModuleMark(1));
+            System.out.println (course.getModuleTitle(2) + " - " + course.getModuleMark(2));
+            System.out.println (course.getModuleTitle(3) + " - " + course.getModuleMark(3));
+            System.out.println (course.getModuleTitle(4) + " - " + course.getModuleMark(4));
             
         }
         
-        return "Not all modules have been completed";
+        return;
         
     }
     
