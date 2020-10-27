@@ -91,4 +91,18 @@ public class Student
     {
         this.course = course;
     }
+    
+    public String printResults()
+    {
+        if (credits > 89)
+        {
+            return "Final Mark - " + course.getFinalMark() + " = Grade - " + course.convertToGrade();
+            
+        }
+        
+        return "Not all modules have been completed";
+        
+    }
+    
 }
+    
