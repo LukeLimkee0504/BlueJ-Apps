@@ -40,6 +40,11 @@ public class Module
        return mark; 
     }
     
+    public String getTitle()
+    {
+        return title;
+    }
+    
     public void print()
     {
         System.out.println("Module: " + codeNo +
