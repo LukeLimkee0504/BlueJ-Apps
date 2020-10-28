@@ -129,6 +129,7 @@ public class Student
         if (credits < 60)
         {
             System.out.println ("Not all modules have been completed");
+            credits = 0;
         }
     }
     
