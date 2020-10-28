@@ -35,6 +35,7 @@ public class Student
     {
         return name;
     }
+   
 
     /**
      * Set a new name for this student.
@@ -42,6 +43,26 @@ public class Student
     public void changeName(String replacementName)
     {
         name = replacementName;
+    }
+    
+    public void updateCredits()
+    {
+        if (course.getModuleMark(1) > 0 && credits < 90) 
+        {
+            credits += 15;
+        }
+        if (course.getModuleMark(2) > 0 && credits < 90) 
+        {
+            credits += 15;
+        }
+        if (course.getModuleMark(3) > 0 && credits < 90) 
+        {
+            credits += 15;
+        }
+        if (course.getModuleMark(4) > 0 && credits < 90) 
+        {
+            credits += 15;
+        }
     }
 
     /**
@@ -94,7 +115,8 @@ public class Student
     
     public void printResults()
     {
-        if (credits > 89)
+        updateCredits();
+        if (credits > 59)
         {
             System.out.println ("Final Mark - " + course.getFinalMark());
             System.out.println ("Grade - " + course.convertToGrade());
@@ -104,9 +126,10 @@ public class Student
             System.out.println (course.getModuleTitle(4) + " - " + course.getModuleMark(4));
             
         }
-        
-        return;
-        
+        if (credits < 60)
+        {
+            System.out.println ("Not all modules have been completed");
+        }
     }
     
 }
