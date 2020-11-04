@@ -116,5 +116,15 @@ public class StockManager
                 System.out.println (product.toString());
             }
     }  
-}
+    }
+    
+     public void renameProduct(int id, String newName)
+    {
+        for(Product product  : stock) {
+            if (product.id == (id)) 
+            {
+                product.name = (newName);
+            }
+    }  
+    }
 }
