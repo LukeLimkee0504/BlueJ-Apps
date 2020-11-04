@@ -9,9 +9,9 @@ public class Product
     // An identifying number for this product.
     public int id;
     // The name of this product.
-    private String name;
+    public String name;
     // The quantity of this product in stock.
-    private int quantity;
+    public int quantity;
 
     /**
      * Constructor for objects of class Product.
