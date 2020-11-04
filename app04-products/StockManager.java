@@ -93,4 +93,28 @@ public class StockManager
         }
         
     }
+    
+    public void  printLowStockProducts()
+    {
+        for(Product product : stock)
+        {
+            {
+                if (product.quantity <  2)
+                {
+                System.out.println (product.toString());
+                }
+            }
+        }
+        
+    }
+    
+     public Product getProductByName(String searchstring)
+    {
+        for(Product product  : stock) {
+            if (product.name.contains (searchstring)) 
+            {
+                return product;
+            }
+    }   return null;
+}
 }
