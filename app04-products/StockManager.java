@@ -108,13 +108,13 @@ public class StockManager
         
     }
     
-     public Product getProductByName(String searchstring)
+     public void getProductByName(String searchstring)
     {
         for(Product product  : stock) {
             if (product.name.contains (searchstring)) 
             {
-                return product;
+                System.out.println (product.toString());
             }
-    }   return null;
+    }  
 }
 }
