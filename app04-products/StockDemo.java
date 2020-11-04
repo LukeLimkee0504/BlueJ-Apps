@@ -86,6 +86,7 @@ public class StockDemo
         }
         return product;
     }
+    
 
     /**
      * @return The stock manager.
