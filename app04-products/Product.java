@@ -7,7 +7,7 @@
 public class Product
 {
     // An identifying number for this product.
-    private int id;
+    public int id;
     // The name of this product.
     private String name;
     // The quantity of this product in stock.
