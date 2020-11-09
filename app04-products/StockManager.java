@@ -71,6 +71,7 @@ public class StockManager
         {
             if (checkID(product,id) == true)
             {
+                System.out.println ("Recieved " + amount + " of " + product.name + " " +product.getID());
                 product.increaseQuantity(amount);
             }
         }
@@ -82,7 +83,7 @@ public class StockManager
         {
             if (checkID(product,id) == true)
             {
-                System.out.println ("Sold " + amount + " of  " + product.name);
+                System.out.println ("Sold " + amount + " of " + product.name + " " +product.getID());
                 product.sellQuantity(amount);
             }
         }
@@ -127,6 +128,7 @@ public class StockManager
      */
     public void printProductDetails()
     {
+        System.out.println ("=============");
         System.out.println ("Current Stock");
         System.out.println ("=============");
             for(Product product : stock)
@@ -143,8 +145,9 @@ public class StockManager
      */
     public void  printLowStockProducts()
     {
+        System.out.println ("=================");
         System.out.println ("Warning low stock");
-        System.out.println ("=============");
+        System.out.println ("=================");
         for(Product product : stock)
         {
             {
