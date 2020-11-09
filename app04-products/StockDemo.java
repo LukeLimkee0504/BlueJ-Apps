@@ -39,8 +39,20 @@ public class StockDemo
     {
         // Show details of all of the products.
         manager.printProductDetails();
-        // Take delivery of 5 items of one of the products.
+        // Take delivery of items.
         manager.delivery(132, 5);
+        manager.delivery(99, 5);
+        manager.delivery(26, 3);
+        manager.delivery(122, 11);
+        // Show details of all of the products.
+        manager.printProductDetails();
+        // Sale of products.
+        System.out.println ("Sale of Stock");
+        System.out.println ("=============");
+        manager.sale(132, 3);
+        manager.sale(122, 5);
+        manager.sale(99, 3);
+        manager.sale(26, 3);
         manager.printProductDetails();
     }
     
