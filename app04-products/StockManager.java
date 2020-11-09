@@ -29,6 +29,11 @@ public class StockManager
         stock.add(item);
     }
     
+     /**
+     * Checks to  see if the product id provided is eqeal to one in stock.
+     * @param id The ID of the product.
+     * @param product the product in the stock.
+     */
     public boolean checkID(Product product, int id)
     {
         if (product.getID() == id)
@@ -38,7 +43,10 @@ public class StockManager
         return false;
     }
         
-    
+    /**
+     * Remove a product from stock.
+     * @param id The ID of the product.
+     */
     public void removeProduct(int id)
     {
         for(Product product : stock)
@@ -116,6 +124,9 @@ public class StockManager
         
     }
     
+     /**
+     * Print all products that are under 2 in quntity
+     */
     public void  printLowStockProducts()
     {
         for(Product product : stock)
@@ -130,16 +141,26 @@ public class StockManager
         
     }
     
-     public void getProductByName(String searchstring)
+    /**
+     * Searches for a product in stock containing searchstring.
+     * @param searchstring The thing you want to search for.
+     */
+    public void getProductByName(String searchstring)
     {
-        for(Product product  : stock) {
+        for(Product product  : stock) 
+        {
             if (product.getName().contains (searchstring)) 
             {
                 System.out.println (product.toString());
             }
-    }  
+        }  
     }
     
+    /**
+     * Searches for a product using the id and renames that product.
+     * @param newName The new name for the product.
+     * @param id The ID of the product you want to rename.
+     */
      public void renameProduct(int id, String newName)
     {
         for(Product product  : stock) 
