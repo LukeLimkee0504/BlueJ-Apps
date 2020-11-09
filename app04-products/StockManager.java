@@ -76,6 +76,18 @@ public class StockManager
         }
     }
     
+    public void sale(int id, int amount)
+    {
+        for(Product product : stock)
+        {
+            if (checkID(product,id) == true)
+            {
+                System.out.println ("Sold " + amount + " of  " + product.name);
+                product.sellQuantity(amount);
+            }
+        }
+    }
+    
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -115,12 +127,14 @@ public class StockManager
      */
     public void printProductDetails()
     {
-        for(Product product : stock)
-        {
+        System.out.println ("Current Stock");
+        System.out.println ("=============");
+            for(Product product : stock)
             {
-                System.out.println (product.toString());
+                {
+                 System.out.println (product.toString());
+                }
             }
-        }
         
     }
     
@@ -129,6 +143,8 @@ public class StockManager
      */
     public void  printLowStockProducts()
     {
+        System.out.println ("Warning low stock");
+        System.out.println ("=============");
         for(Product product : stock)
         {
             {
