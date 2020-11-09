@@ -19,7 +19,7 @@ public class StockManager
     {
         stock = new ArrayList<>();
     }
-
+    
     /**
      * Add a product to the list.
      * @param item The item to be added.
@@ -29,11 +29,21 @@ public class StockManager
         stock.add(item);
     }
     
+    public boolean checkID(Product product, int id)
+    {
+        if (product.getID() == id)
+        {
+            return true;
+        }
+        return false;
+    }
+        
+    
     public void removeProduct(int id)
     {
         for(Product product : stock)
         {
-            if (product.id == id)
+            if (checkID(product,id) == true)
             {
                 stock.remove(product);
                 return;
@@ -51,7 +61,7 @@ public class StockManager
     {
         for(Product product : stock)
         {
-            if (product.id == id)
+            if (checkID(product,id) == true)
             {
                 product.increaseQuantity(amount);
             }
@@ -66,7 +76,7 @@ public class StockManager
     public Product findProduct(int id)
     {
         for(Product product  : stock) {
-            if (product.id == id) 
+            if (checkID(product,id) == true)
             {
                 return product;
             }
@@ -84,7 +94,7 @@ public class StockManager
     {
         for(Product product : stock)
         {
-            if (product.id == id)
+            if (checkID(product,id) == true)
             {
                 return product.getQuantity();
             }
@@ -111,7 +121,7 @@ public class StockManager
         for(Product product : stock)
         {
             {
-                if (product.quantity <  2)
+                if (product.getQuantity() <  2)
                 {
                 System.out.println (product.toString());
                 }
@@ -123,7 +133,7 @@ public class StockManager
      public void getProductByName(String searchstring)
     {
         for(Product product  : stock) {
-            if (product.name.contains (searchstring)) 
+            if (product.getName().contains (searchstring)) 
             {
                 System.out.println (product.toString());
             }
@@ -132,11 +142,12 @@ public class StockManager
     
      public void renameProduct(int id, String newName)
     {
-        for(Product product  : stock) {
-            if (product.id == (id)) 
+        for(Product product  : stock) 
+        {
+            if (checkID(product,id) == true)
             {
-                product.name = (newName);
+                product.name = newName;
             }
-    }  
+        }  
     }
 }
