@@ -7,11 +7,11 @@
 public class Product
 {
     // An identifying number for this product.
-    public int id;
+    private int id;
     // The name of this product.
     public String name;
     // The quantity of this product in stock.
-    public int quantity;
+    private int quantity;
 
     /**
      * Constructor for objects of class Product.
