@@ -1,0 +1,56 @@
+StockManager stock = new StockManager();
+StockDemo demo = new StockDemo(stock);
+demo.demo();
+=============
+Current Stock
+=============
+132: Clock Radio stock level: 0
+37: Mobile Phone stock level: 0
+23: Microwave Oven stock level: 0
+74: Iphone stock level: 0
+39: Xbox stock level: 0
+23: Mug stock level: 0
+26: Computer stock level: 0
+56: Lamp stock level: 0
+99: Basketball stock level: 0
+122: Washing Machine stock level: 0
+=================
+Delivery of stock
+=================
+Recieved 5 of Clock Radio 132
+Recieved 5 of Basketball 99
+Recieved 3 of Computer 26
+Recieved 11 of Washing Machine 122
+=============
+Current Stock
+=============
+132: Clock Radio stock level: 5
+37: Mobile Phone stock level: 0
+23: Microwave Oven stock level: 0
+74: Iphone stock level: 0
+39: Xbox stock level: 0
+23: Mug stock level: 0
+26: Computer stock level: 3
+56: Lamp stock level: 0
+99: Basketball stock level: 5
+122: Washing Machine stock level: 11
+=============
+Sale of stock
+=============
+Sold 3 of Clock Radio 132
+Sold 5 of Washing Machine 122
+Sold 3 of Basketball 99
+Sold 3 of Computer 26
+=============
+Current Stock
+=============
+132: Clock Radio stock level: 2
+37: Mobile Phone stock level: 0
+23: Microwave Oven stock level: 0
+74: Iphone stock level: 0
+39: Xbox stock level: 0
+23: Mug stock level: 0
+26: Computer stock level: 0
+56: Lamp stock level: 0
+99: Basketball stock level: 2
+122: Washing Machine stock level: 6
