@@ -40,8 +40,9 @@ public class StockDemo
         // Show details of all of the products.
         manager.printProductDetails();
         // Take delivery of items.
+        System.out.println ("=================");
         System.out.println ("Delivery of stock");
-        System.out.println ("=============");
+        System.out.println ("=================");
         manager.delivery(132, 5);
         manager.delivery(99, 5);
         manager.delivery(26, 3);
@@ -49,6 +50,7 @@ public class StockDemo
         // Show details of all of the products.
         manager.printProductDetails();
         // Sale of products.
+        System.out.println ("=============");
         System.out.println ("Sale of stock");
         System.out.println ("=============");
         manager.sale(132, 3);
