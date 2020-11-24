@@ -11,6 +11,7 @@ public class StockApp
 {
     // Use to get user input
     private InputReader input;
+    private StockManager stockManager;
     
     /**
      * Constructor for objects of class StockApp
@@ -18,6 +19,7 @@ public class StockApp
     public StockApp()
     {
         input = new InputReader();
+        stockManager = new StockManager();
     }
 
     /**
@@ -35,14 +37,30 @@ public class StockApp
     public void getMenuChoice()
     {
         boolean finished = false;
+        printHeading();
         
         while(!finished)
         {
-            printHeading();
+            
             printMenuChoices();
            
             String choice = input.getInput();
-            finished = true;
+            if(choice.startsWith("Add")) 
+            {
+                System.out.println("Product added");
+            }
+            if(choice.startsWith("Remove")) 
+            {
+                System.out.println("Product Removed");
+            }
+            if(choice.startsWith("PrintAll")) 
+            {
+                System.out.println("Products Printed");
+            }
+            if(choice.startsWith("Quit")) 
+            {
+                finished = true;
+            }
         }
     }
     
@@ -59,6 +77,7 @@ public class StockApp
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }
+   
     
     /**
      * Print the title of the program and the authors name
@@ -67,7 +86,9 @@ public class StockApp
     {
         System.out.println("******************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
+        System.out.println("    App05: by Luke Lim-kee");
         System.out.println("******************************");
     }
+    
+    
 }
