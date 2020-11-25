@@ -37,27 +37,27 @@ public class StockApp
     public void getMenuChoice()
     {
         boolean finished = false;
-        printHeading();
-        
+        printHeading();    
         while(!finished)
         {
             
             printMenuChoices();
-           
             String choice = input.getInput();
             if(choice.startsWith("Add")) 
             {
+                
                 System.out.println("Product added");
             }
-            if(choice.startsWith("Remove")) 
+            if(choice.equals("Remove")) 
             {
                 System.out.println("Product Removed");
             }
-            if(choice.startsWith("PrintAll")) 
+            if(choice.equals("PrintAll")) 
             {
+                stockManager.printProductDetails();
                 System.out.println("Products Printed");
             }
-            if(choice.startsWith("Quit")) 
+            if(choice.equals("Quit")) 
             {
                 finished = true;
             }
