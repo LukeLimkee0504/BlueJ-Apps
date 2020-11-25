@@ -33,4 +33,12 @@ public class InputReader
 
         return inputLine;
     }
+    
+    public int getInt()
+    {
+        System.out.print("> ");         // print prompt
+        int inputLine = reader.nextInt();
+
+        return inputLine;
+    }
 }
