@@ -40,26 +40,69 @@ public class StockApp
         printHeading();    
         while(!finished)
         {
-            
             printMenuChoices();
             String choice = input.getInput();
             if(choice.startsWith("Add")) 
             {
+                System.out.println("Please input the name of the product");
+                String name = input.getInput(); 
                 
-                System.out.println("Product added");
+                System.out.println("Please input the id of the product");
+                int id = input.getInt();
+                
+                stockManager.addProduct(new Product (name, id));
+                System.out.println("Product added : " + name + " " +  id);
+                
             }
-            if(choice.equals("Remove")) 
+            else if(choice.equals("Remove")) 
             {
-                System.out.println("Product Removed");
+                System.out.println("Please input the id of the product");
+                int id = input.getInt();
+                
+                stockManager.removeProduct(id);
+                System.out.println("Product removed : " +  id);
             }
-            if(choice.equals("PrintAll")) 
+            else if(choice.equals("PrintAll")) 
             {
                 stockManager.printProductDetails();
                 System.out.println("Products Printed");
             }
-            if(choice.equals("Quit")) 
+            else if(choice.equals("Delivery")) 
             {
+                System.out.println("Please input the id of the product");
+                int id = input.getInt();
+                
+                System.out.println("Please enter the amount delivered");
+                int amount = input.getInt();
+                stockManager.delivery(id, amount);
+            }
+            else if(choice.equals("Sell")) 
+            {
+                System.out.println("Please input the id of the product");
+                int id = input.getInt();
+                
+                System.out.println("Please enter the amount sold");
+                int amount = input.getInt();
+                stockManager.sale(id, amount);
+            }
+            else if(choice.equals("Search")) 
+            {
+                System.out.println("Please enter the name of the product");
+                String searchCriteria = input.getInput();
+                stockManager.getProductByName(searchCriteria);
+            }
+            else if(choice.equals("Low Stock")) 
+            {
+                stockManager.printLowStockProducts();
+            }
+            else if(choice.equals("Quit")) 
+            {
+                System.out.println("Program ended");
                 finished = true;
+            }
+            else
+            {
+               System.out.println("Invalid response, please input one of the following commands"); 
             }
         }
     }
@@ -74,6 +117,10 @@ public class StockApp
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    PrintAll:   Print all products");
+        System.out.println("    Delivery:   Receive a delivery of a product and add it to stock");
+        System.out.println("    Sell:       Sell a product from stock");
+        System.out.println("    Search:     Search for a product in stock");
+        System.out.println("    Low Stock:  List products with low stock");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }
