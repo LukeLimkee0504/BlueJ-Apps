@@ -76,7 +76,11 @@ public class StockManager
             }
         }
     }
-    
+    /**
+     * Removes an amount of a partcular item from the stock level
+     * @param id The ID of the product.
+     * @param amount The amount of the product sold
+     */
     public void sale(int id, int amount)
     {
         for(Product product : stock)
@@ -102,7 +106,7 @@ public class StockManager
                 return product;
             }
     }   return null;
-}
+    }
     
     /**
      * Locate a product with the given ID, and return how
@@ -143,7 +147,7 @@ public class StockManager
      /**
      * Print all products that are under 2 in quntity
      */
-    public void  printLowStockProducts()
+    public void  printLowStockProducts(int minimum)
     {
         System.out.println ("=================");
         System.out.println ("Warning low stock");
@@ -151,9 +155,26 @@ public class StockManager
         for(Product product : stock)
         {
             {
-                if (product.getQuantity() <  2)
+                if (product.getQuantity() <  minimum)
                 {
                 System.out.println (product.toString());
+                }
+            }
+        }
+        
+    }
+    
+     /**
+      * Finds all products under a minimum stock level and restocks them to a given stock level
+      */
+    public void  restockProducts(int minimum, int restockAmount)
+    {
+        for(Product product : stock)
+        {
+            {
+                if (product.getQuantity() <  minimum)
+                {
+                product.quantity = + restockAmount;
                 }
             }
         }
