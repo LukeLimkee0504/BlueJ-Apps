@@ -11,7 +11,7 @@ public class Product
     // The name of this product.
     public String name;
     // The quantity of this product in stock.
-    private int quantity;
+    public int quantity;
 
     /**
      * Constructor for objects of class Product.
