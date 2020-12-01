@@ -45,14 +45,27 @@ public class StockApp
             if(choice.startsWith("Add")) 
             {
                 System.out.println("Please input the name of the product");
-                String name = input.getInput(); 
+                    String name = input.getInput(); 
+                    while(name.length() < 1)
+                    {
+                        System.out.println("Product must have a name");
+                        System.out.println("Please input a name for this product");
+                        name = input.getInput();
+                   }
                 
                 System.out.println("Please input the id of the product");
                 int id = input.getInt();
                 
+                while(!stockManager.addProduct(new Product(name,id)))
+                {
+                    System.out.println("A product with that id already exists");
+                    System.out.println("Please input a diffrent id for this product");
+                    id = input.getInt();
+                }
+                
+              
                 stockManager.addProduct(new Product (name, id));
                 System.out.println("Product added : " + name + " " +  id);
-                
             }
             else if(choice.equals("Remove")) 
             {
@@ -111,10 +124,7 @@ public class StockApp
                 System.out.println("Program ended");
                 finished = true;
             }
-            else
-            {
-               System.out.println("Invalid response, please input one of the following commands"); 
-            }
+            
         }
     }
     
