@@ -24,9 +24,17 @@ public class StockManager
      * Add a product to the list.
      * @param item The item to be added.
      */
-    public void addProduct(Product item)
+    public boolean addProduct(Product item)
     {
+        for (Product product : stock)
+        {
+            if(product.getID() == item.id)
+            {
+                return false;
+            }
+        }
         stock.add(item);
+        return true;
     }
     
      /**
@@ -55,6 +63,10 @@ public class StockManager
             {
                 stock.remove(product);
                 return;
+            }
+            else if (checkID(product,id) == false)
+            {
+                System.out.println ("No products found with this ID");
             }
         }
     }
