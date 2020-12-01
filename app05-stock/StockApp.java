@@ -23,7 +23,7 @@ public class StockApp
     }
 
     /**
-     * 
+     * Starts the program
      */
     public void run()
     {
@@ -32,7 +32,7 @@ public class StockApp
     }
     
     /**
-     * 
+     * All of the diffrent menu choices and thier given responses
      */
     public void getMenuChoice()
     {
@@ -92,8 +92,19 @@ public class StockApp
                 stockManager.getProductByName(searchCriteria);
             }
             else if(choice.equals("Low Stock")) 
+            {   
+                System.out.println("Please enter the minimum stock level");
+                int minimum = input.getInt();
+                stockManager.printLowStockProducts(minimum);
+            }
+            else if(choice.equals("Restock")) 
             {
-                stockManager.printLowStockProducts();
+                System.out.println("Please enter the minimum stock level of items you want to restock");
+                int minimum = input.getInt();
+                stockManager.printLowStockProducts(minimum);
+                System.out.println("Please enter the amount you would like to restock to");
+                int restockAmount = input.getInt();
+                stockManager.restockProducts(minimum, restockAmount);
             }
             else if(choice.equals("Quit")) 
             {
@@ -121,6 +132,7 @@ public class StockApp
         System.out.println("    Sell:       Sell a product from stock");
         System.out.println("    Search:     Search for a product in stock");
         System.out.println("    Low Stock:  List products with low stock");
+        System.out.println("    Restock:    Restock low stock products to a given amount");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }
