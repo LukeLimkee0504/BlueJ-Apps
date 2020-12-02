@@ -62,13 +62,10 @@ public class StockManager
             if (checkID(product,id) == true)
             {
                 stock.remove(product);
+                System.out.println("Product: " + id + " removed");
                 return;
             }
-            else if (checkID(product,id) == false)
-            {
-                System.out.println ("No products found with this ID");
-            }
-        }
+        }   
     }
     
     /**
@@ -87,7 +84,8 @@ public class StockManager
                 product.increaseQuantity(amount);
             }
         }
-    }
+    } 
+    
     /**
      * Removes an amount of a partcular item from the stock level
      * @param id The ID of the product.
@@ -99,6 +97,11 @@ public class StockManager
         {
             if (checkID(product,id) == true)
             {
+                if(amount > product.quantity)
+                {
+                    System.out.println("Not enough in stock");
+                    return;
+                }
                 System.out.println ("Sold " + amount + " of " + product.name + " " +product.getID());
                 product.sellQuantity(amount);
             }
@@ -117,7 +120,7 @@ public class StockManager
             {
                 return product;
             }
-    }   return null;
+        }   return null;
     }
     
     /**
@@ -156,7 +159,7 @@ public class StockManager
         
     }
     
-     /**
+    /**
      * Print all products that are under 2 in quntity
      */
     public void  printLowStockProducts(int minimum)
@@ -176,7 +179,7 @@ public class StockManager
         
     }
     
-     /**
+    /**
       * Finds all products under a minimum stock level and restocks them to a given stock level
       */
     public void  restockProducts(int minimum, int restockAmount)
