@@ -37,7 +37,7 @@ public class StockApp
     public void getMenuChoice()
     {
         boolean finished = false;
-        printHeading();    
+           
         while(!finished)
         {
             printMenuChoices();
@@ -63,7 +63,6 @@ public class StockApp
                     id = input.getInt();
                 }
                 
-              
                 stockManager.addProduct(new Product (name, id));
                 System.out.println("Product added : " + name + " " +  id);
             }
@@ -71,9 +70,7 @@ public class StockApp
             {
                 System.out.println("Please input the id of the product");
                 int id = input.getInt();
-                
-                stockManager.removeProduct(id);
-                System.out.println("Product removed : " +  id);
+                stockManager.removeProduct(id);              
             }
             else if(choice.equals("PrintAll")) 
             {
