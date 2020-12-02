@@ -1,0 +1,199 @@
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Delivery
+Please input the id of the product
+> 112
+Please enter the amount delivered
+> -4
+Recieved -4 of Samsung Galaxy S20 112
+Attempt to restock Samsung Galaxy S20 with a non-positive amount: -4
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> 
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Sell
+Please input the id of the product
+> 112
+Please enter the amount sold
+> 2
+Sold 2 of Samsung Galaxy S20 112
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> 
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Sell
+Please input the id of the product
+> 112
+Please enter the amount sold
+> 10
+Not enough in stock
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> 
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Sell
+Please input the id of the product
+> -2
+Please enter the amount sold
+> -2
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> 
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Sell
+Please input the id of the product
+> 112
+Please enter the amount sold
+> -2
+Sold -2 of Samsung Galaxy S20 112
+Attempt to sell Samsung Galaxy S20 with a non-positive amount: -2
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> 
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Search
+Please enter the name of the product
+> Samsung
+111: Samsung Galaxy S10 stock level: 0
+112: Samsung Galaxy S20 stock level: 6
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Low Stock
+Please enter the minimum stock level
+> 2
+=================
+Warning low stock
+=================
+111: Samsung Galaxy S10 stock level: 0
+114: Iphone 12 stock level: 0
+115: Motorola G9 Plus stock level: 0
+117: New Product stock level: 0
+116: New Item stock level: 0
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> 
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Delivery:   Receive a delivery of a product and add it to stock
+    Sell:       Sell a product from stock
+    Search:     Search for a product in stock
+    Low Stock:  List products with low stock
+    Restock:    Restock low stock products to a given amount
+    Quit:       Quit the program
+
+> Quit
+Program ended
