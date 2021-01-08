@@ -39,14 +39,14 @@ public class Game
         Room outside, mainHall, kitchen, masterBedroom, library, guestRoom, upstairsLanding, secretRoom;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        mainHall = new Room("in a lecture theater");
-        kitchen = new Room("in the campus pub");
-        masterBedroom = new Room("in a computing lab");
-        library = new Room("in the computing admin office");
-        guestRoom = new Room("in the computing admin office");
-        upstairsLanding = new Room("in the computing admin office");
-        secretRoom = new Room("in the computing admin office");
+        outside = new Room("outside the main entrance of the manor");
+        mainHall = new Room("in the main hall");
+        kitchen = new Room("in the manor kitchen");
+        masterBedroom = new Room("in the master bedroom");
+        library = new Room("in a huge library");
+        guestRoom = new Room("in a small guest room");
+        upstairsLanding = new Room("on the upstairs landing");
+        secretRoom = new Room("in a dusty old hidden room");
         
         
         // initialise room exits
