@@ -21,6 +21,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Player player;
         
     /**
      * Create the game and initialise its internal map.
@@ -29,6 +30,7 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        player = new Player();
     }
 
     /**
@@ -133,7 +135,11 @@ public class Game
             case GO:
                 goRoom(command);
                 break;
-
+            
+            case LOOK:
+                describeRoom(command);
+                break;
+                
             case QUIT:
                 wantToQuit = quit(command);
                 break;
@@ -151,7 +157,7 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around at the decrepid old manor.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
@@ -176,12 +182,25 @@ public class Game
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
+            System.out.println("There is no exit that way!");
         }
         else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
+    }
+    
+    private void describeRoom(Command command)
+    {
+        if(!command.hasSecondWord()) 
+        {
+            // if there is no second word, we don't know where to go...
+            System.out.println("Look where?");
+            return;
+        }
+        
+        String direction = command.getSecondWord();
+        
     }
 
     /** 
