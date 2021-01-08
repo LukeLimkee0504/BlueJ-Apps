@@ -36,28 +36,41 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside, mainHall, kitchen, masterBedroom, library, guestRoom, upstairsLanding, secretRoom;
       
         // create the rooms
         outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        mainHall = new Room("in a lecture theater");
+        kitchen = new Room("in the campus pub");
+        masterBedroom = new Room("in a computing lab");
+        library = new Room("in the computing admin office");
+        guestRoom = new Room("in the computing admin office");
+        upstairsLanding = new Room("in the computing admin office");
+        secretRoom = new Room("in the computing admin office");
+        
         
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        outside.setExit("north", mainHall);
+        
+        mainHall.setExit("north", upstairsLanding);
+        mainHall.setExit("east", kitchen);
+        mainHall.setExit("south", outside);
+        mainHall.setExit("west", library);
+        
+        kitchen.setExit("west", mainHall);
+        
+        secretRoom.setExit("north", library);
+        
+        guestRoom.setExit("east", upstairsLanding);
+        
+        upstairsLanding.setExit("south", mainHall);
+        upstairsLanding.setExit("east", masterBedroom);
+        upstairsLanding.setExit("west", guestRoom);
+        
+        masterBedroom.setExit("west", upstairsLanding);
 
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
+        library.setExit("south", secretRoom);
+        library.setExit("east", mainHall);
 
         currentRoom = outside;  // start game outside
     }
