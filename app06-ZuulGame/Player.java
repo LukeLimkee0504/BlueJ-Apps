@@ -16,8 +16,19 @@ public class Player
      */
     public Player()
     {
-        // initialise instance variables
+        // initialise energy to max and score to 0 
         energy = 500;
         score = 0;
     }
+    
+    public int getEnergy()
+    {
+        return energy;
+    }
+    
+    public int getScore()
+    {
+        return score;
+    }
+    
 }
