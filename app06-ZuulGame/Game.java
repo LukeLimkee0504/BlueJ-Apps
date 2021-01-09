@@ -136,8 +136,8 @@ public class Game
                 goRoom(command);
                 break;
             
-            case LOOK:
-                describeRoom(command);
+            case INSPECT:
+                inspectRoom();
                 break;
                 
             case QUIT:
@@ -157,7 +157,7 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the decrepid old manor.");
+        System.out.println("around at the decrepit old manor.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
@@ -185,25 +185,20 @@ public class Game
             System.out.println("There is no exit that way!");
         }
         else {
-            player.useEnergy(100);
+            player.useEnergy(20);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            System.out.println("----------------------------------------------");
             System.out.println("You now have " + player.getEnergy() +" energy");
             
         }
     }
     
-    private void describeRoom(Command command)
+    private void inspectRoom()
     {
-        if(!command.hasSecondWord()) 
-        {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Look where?");
-            return;
-        }
-        
-        String direction = command.getSecondWord();
-        
+        player.useEnergy(40);
+        System.out.println("You take a closer look around");  
+        System.out.println(currentRoom.getLongDescription());
     }
 
     /** 
@@ -220,6 +215,5 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
-    }
-    
-    }
+    }  
+}
