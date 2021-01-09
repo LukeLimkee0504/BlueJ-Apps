@@ -185,8 +185,11 @@ public class Game
             System.out.println("There is no exit that way!");
         }
         else {
+            player.useEnergy(100);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            System.out.println("You now have " + player.getEnergy() +" energy");
+            
         }
     }
     
@@ -218,4 +221,5 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
-}
+    
+    }
