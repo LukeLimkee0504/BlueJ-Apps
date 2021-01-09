@@ -31,4 +31,9 @@ public class Player
         return score;
     }
     
+    public void useEnergy(int amount)
+    {
+        energy = energy - amount;
+    }
+    
 }
