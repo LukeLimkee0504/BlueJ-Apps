@@ -14,7 +14,7 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
  * 
- * Modified and extended by Student Name
+ * Modified and extended by Luke Lim-kee
  */
 
 public class Game 
@@ -41,14 +41,14 @@ public class Game
         Room outside, mainHall, kitchen, masterBedroom, library, guestRoom, upstairsLanding, secretRoom;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the manor");
-        mainHall = new Room("in the main hall");
-        kitchen = new Room("in the manor kitchen");
-        masterBedroom = new Room("in the master bedroom");
-        library = new Room("in a huge library");
-        guestRoom = new Room("in a small guest room");
-        upstairsLanding = new Room("on the upstairs landing");
-        secretRoom = new Room("in a dusty old hidden room");
+        outside = new Room("outside the main entrance of the manor", "you see the outside of the manor the door wide open inviting you in, cold air blowing towards you");
+        mainHall = new Room("in the main hall", "you find yourself in a huge empty hall with dimly lit candles all around");
+        kitchen = new Room("in the manor kitchen", "the kitchen is cold with rusty utensils scattered around the room");
+        masterBedroom = new Room("in the master bedroom", "there is a thick layer of dust around the room however you spy a small pocket watch beside the bed, looks valuable");
+        library = new Room("in a huge library", "you peer around at the many books and notice a slight gap between two of the books and engraved under is a key symbol");
+        guestRoom = new Room("in a small guest room", "you notice this room in pretty well kept and upon snooping around more you notice a small key in the bedside table");
+        upstairsLanding = new Room("on the upstairs landing", "you look down from above at the great hall as you hear the tikking of the clock");
+        secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for");
         
         
         // initialise room exits
@@ -185,6 +185,7 @@ public class Game
             System.out.println("There is no exit that way!");
         }
         else {
+            System.out.flush();
             player.useEnergy(20);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
@@ -198,7 +199,7 @@ public class Game
     {
         player.useEnergy(40);
         System.out.println("You take a closer look around");  
-        System.out.println(currentRoom.getLongDescription());
+        System.out.println(currentRoom.getInspectDescription());
     }
 
     /** 
