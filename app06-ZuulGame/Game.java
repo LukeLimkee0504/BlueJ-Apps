@@ -50,6 +50,7 @@ public class Game
         upstairsLanding = new Room("on the upstairs landing", "you look down from above at the great hall as you hear the tikking of the clock");
         secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for");
         
+        //initialise room items
         
         // initialise room exits
         outside.setExit("north", mainHall);
