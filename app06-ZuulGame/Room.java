@@ -88,6 +88,11 @@ public class Room
         }
         return returnString;
     }
+    
+    public ArrayList getItemsList(Room room)
+    {
+       return room.items;
+    }
 
     /**
      * Return the room that is reached if we go from this room in direction

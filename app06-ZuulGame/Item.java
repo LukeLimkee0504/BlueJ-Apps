@@ -23,4 +23,9 @@ public class Item
     {
         return itemName;
     }
+    
+    public String toString()
+    {
+        return itemName;
+    }
 }

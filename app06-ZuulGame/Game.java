@@ -51,6 +51,7 @@ public class Game
         secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for");
         
         //initialise room items
+        masterBedroom.getItemsList(masterBedroom).add("Book");
         
         // initialise room exits
         outside.setExit("north", mainHall);
@@ -201,6 +202,7 @@ public class Game
         player.useEnergy(40);
         System.out.println("You take a closer look around");  
         System.out.println(currentRoom.getInspectDescription());
+        currentRoom.printItems();
     }
 
     /** 
