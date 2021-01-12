@@ -39,6 +39,7 @@ public class Game
     private void createRooms()
     {
         Room outside, mainHall, kitchen, masterBedroom, library, guestRoom, upstairsLanding, secretRoom;
+        Item book, key, pocketWatch, hierloom;
       
         // create the rooms
         outside = new Room("outside the main entrance of the manor", "you see the outside of the manor the door wide open inviting you in, cold air blowing towards you");
@@ -50,8 +51,17 @@ public class Game
         upstairsLanding = new Room("on the upstairs landing", "you look down from above at the great hall as you hear the tikking of the clock");
         secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for");
         
+        //create items
+        book = new Item("Book", 100);
+        key = new Item("Key", 100);
+        pocketWatch = new Item("Pocket Watch", 100);
+        hierloom= new Item("Hierloom", 100);
+        
         //initialise room items
-        masterBedroom.getItemsList(masterBedroom).add("Book");
+        mainHall.getItemsList().add(book);
+        masterBedroom.getItemsList().add(pocketWatch);
+        secretRoom.getItemsList().add(hierloom);
+        guestRoom.getItemsList().add(key);
         
         // initialise room exits
         outside.setExit("north", mainHall);
@@ -202,6 +212,8 @@ public class Game
         player.useEnergy(40);
         System.out.println("You take a closer look around");  
         System.out.println(currentRoom.getInspectDescription());
+        System.out.println(""); 
+        System.out.println("Items:"); 
         currentRoom.printItems();
     }
 

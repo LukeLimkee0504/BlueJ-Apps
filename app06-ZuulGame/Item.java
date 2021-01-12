@@ -9,13 +9,15 @@ public class Item
 {
     // instance variables - replace the example below with your own
     private String itemName;
+    private int value;
 
     /**
      * Constructor for objects of class Item
      */
-    public Item(String name)
+    public Item(String itemName, int value)
     {
-       itemName = name;
+       this.itemName = itemName;
+       this.value = value;
     }
 
 

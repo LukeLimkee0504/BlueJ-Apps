@@ -89,9 +89,19 @@ public class Room
         return returnString;
     }
     
-    public ArrayList getItemsList(Room room)
+    public ArrayList getItemsList()
     {
-       return room.items;
+       return items;
+    }
+    
+    public void printItems()
+    {
+        for(Item item : items)
+            {
+                {
+                 System.out.println (item.toString());
+                }
+            }
     }
 
     /**
