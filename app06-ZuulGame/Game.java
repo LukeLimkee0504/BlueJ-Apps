@@ -35,6 +35,7 @@ public class Game
 
     /**
      * Create all the rooms and link their exits together.
+     * Also create all the items and add them to room arraylists.
      */
     private void createRooms()
     {
@@ -101,6 +102,11 @@ public class Game
                 
         boolean finished = false;
         
+        if (player.getEnergy() == 0)
+        {
+            finished = true;
+        }
+        
         while (! finished) 
         {
             Command command = parser.getCommand();
@@ -116,8 +122,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to Durst Manor!");
+        System.out.println("Your goal is to get into the secret room within the manor and steal the family heirloom.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -150,6 +156,10 @@ public class Game
             
             case INSPECT:
                 inspectRoom();
+                break;
+            
+            case PICKUP:
+                pickupItem(command);
                 break;
                 
             case QUIT:
@@ -206,11 +216,30 @@ public class Game
         }
     }
     
+    private void pickupItem(Command command)
+    {
+        if(!command.hasSecondWord()) 
+        {
+            System.out.println("Pickup what?");
+            return;
+        }
+        
+        String item = command.getSecondWord();
+        
+        if (currentRoom.getItemsList().contains(item))
+        {
+            System.out.println("success");
+        }
+        
+        return;
+    }
+    
     private void inspectRoom()
     {
         player.useEnergy(20);
         System.out.println("You take a closer look around");  
         System.out.println(currentRoom.getInspectDescription());
+        System.out.println("You now have " + player.getEnergy() +" energy");
         System.out.println(""); 
         System.out.println("Items:"); 
         currentRoom.printItems();
