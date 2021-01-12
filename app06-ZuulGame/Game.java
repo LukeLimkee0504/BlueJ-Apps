@@ -197,7 +197,6 @@ public class Game
             System.out.println("There is no exit that way!");
         }
         else {
-            System.out.flush();
             player.useEnergy(20);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
@@ -209,14 +208,14 @@ public class Game
     
     private void inspectRoom()
     {
-        player.useEnergy(40);
+        player.useEnergy(20);
         System.out.println("You take a closer look around");  
         System.out.println(currentRoom.getInspectDescription());
         System.out.println(""); 
         System.out.println("Items:"); 
         currentRoom.printItems();
     }
-
+    
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
