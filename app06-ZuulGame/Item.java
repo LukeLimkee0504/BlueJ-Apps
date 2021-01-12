@@ -30,4 +30,9 @@ public class Item
     {
         return itemName;
     }
+    
+    public int getValue()
+    {
+        return value;
+    }
 }
