@@ -58,6 +58,7 @@ public class Map
         
         kitchen.setExit("west", mainHall);
         
+        
         secretRoom.setExit("north", library);
         
         guestRoom.setExit("east", upstairsLanding);
@@ -67,8 +68,9 @@ public class Map
         upstairsLanding.setExit("west", guestRoom);
         
         masterBedroom.setExit("west", upstairsLanding);
-
-        library.setExit("south", secretRoom);
+        
+        // (need to create unlock function before accessable)
+        //  library.setExit("south", secretRoom);
         library.setExit("east", mainHall);
         
         spawn = outside;
