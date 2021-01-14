@@ -22,72 +22,23 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Player player;
+    private Map map;
         
     /**
      * Create the game and initialise its internal map.
      */
     public Game() 
     {
-        createRooms();
+        map = new Map();
+        map.createMap();
+        setSpawn();
         parser = new Parser();
         player = new Player();
     }
-
-    /**
-     * Create all the rooms and link their exits together.
-     * Also create all the items and add them to room arraylists.
-     */
-    private void createRooms()
+    
+    public void setSpawn()
     {
-        Room outside, mainHall, kitchen, masterBedroom, library, guestRoom, upstairsLanding, secretRoom;
-        Item book, key, pocketWatch, hierloom;
-      
-        // create the rooms
-        outside = new Room("outside the main entrance of the manor", "you see the outside of the manor the door wide open inviting you in, cold air blowing towards you");
-        mainHall = new Room("in the main hall", "you find yourself in a huge empty hall with dimly lit candles all around");
-        kitchen = new Room("in the manor kitchen", "the kitchen is cold with rusty utensils scattered around the room");
-        masterBedroom = new Room("in the master bedroom", "there is a thick layer of dust around the room however you spy a small pocket watch beside the bed, looks valuable");
-        library = new Room("in a huge library", "you peer around at the many books and notice a slight gap between two of the books and engraved under is a key symbol");
-        guestRoom = new Room("in a small guest room", "you notice this room in pretty well kept and upon snooping around more you notice a small key in the bedside table");
-        upstairsLanding = new Room("on the upstairs landing", "you look down from above at the great hall as you hear the tikking of the clock");
-        secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for");
-        
-        //create items
-        book = new Item("Book", 100);
-        key = new Item("Key", 100);
-        pocketWatch = new Item("Pocket Watch", 100);
-        hierloom= new Item("Hierloom", 100);
-        
-        //initialise room items
-        mainHall.getItemsList().add(book);
-        masterBedroom.getItemsList().add(pocketWatch);
-        secretRoom.getItemsList().add(hierloom);
-        guestRoom.getItemsList().add(key);
-        
-        // initialise room exits
-        outside.setExit("north", mainHall);
-        
-        mainHall.setExit("north", upstairsLanding);
-        mainHall.setExit("east", kitchen);
-        mainHall.setExit("south", outside);
-        mainHall.setExit("west", library);
-        
-        kitchen.setExit("west", mainHall);
-        
-        secretRoom.setExit("north", library);
-        
-        guestRoom.setExit("east", upstairsLanding);
-        
-        upstairsLanding.setExit("south", mainHall);
-        upstairsLanding.setExit("east", masterBedroom);
-        upstairsLanding.setExit("west", guestRoom);
-        
-        masterBedroom.setExit("west", upstairsLanding);
-
-        library.setExit("south", secretRoom);
-        library.setExit("east", mainHall);
-
-        currentRoom = outside;  // start game outside
+        currentRoom = map.getSpawn();
     }
 
     /**
@@ -98,19 +49,28 @@ public class Game
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
+        // if the players health reaches zero the game end. 
         // execute them until the game is over.
                 
         boolean finished = false;
         
-        if (player.getEnergy() == 0)
-        {
-            finished = true;
-        }
+        
         
         while (! finished) 
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
+            
+            if (player.getEnergy() == 0)
+        {
+            System.out.println("--------------------------------------------------------");
+            System.out.println("You pass out from exuastion and the world fades to black");
+            System.out.println("");
+            System.out.println("---------------------GAME OVER-------------------------");
+            System.out.println("Final score - " + (player.getScore()));
+            System.out.println("--------------------------------------------------------");
+            finished = true;
+        }
         }
         
         System.out.println("Thank you for playing.  Good bye.");
@@ -226,9 +186,17 @@ public class Game
         
         String item = command.getSecondWord();
         
-        if (currentRoom.getItemsList().contains(item))
+        if (currentRoom.getItemsArray().contains(item))
         {
-            System.out.println("success");
+            System.out.println("You picked up " + (item));
+            player.useEnergy(20);
+            System.out.println("----------------------------------------------");
+            System.out.println("You now have " + player.getEnergy() +" energy");
+        }
+        
+        else
+        {
+          System.out.println("There is no " + (item));  
         }
         
         return;
@@ -239,8 +207,9 @@ public class Game
         player.useEnergy(20);
         System.out.println("You take a closer look around");  
         System.out.println(currentRoom.getInspectDescription());
+        System.out.println("----------------------------------------------");
         System.out.println("You now have " + player.getEnergy() +" energy");
-        System.out.println(""); 
+        System.out.println("----------------------------------------------");
         System.out.println("Items:"); 
         currentRoom.printItems();
     }

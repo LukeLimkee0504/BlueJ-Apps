@@ -89,21 +89,28 @@ public class Room
         return returnString;
     }
     
-    public ArrayList getItemsList()
+    public ArrayList getItemsArray()
     {
        return items;
+    }
+    
+    public String getItemsString()
+    {
+       for(Item item : items)
+            {
+               return item.toString();
+            }
+            return null;
     }
     
     public void printItems()
     {
         for(Item item : items)
-            {
-                {
-                 System.out.println (item.toString());
-                }
+            { 
+                 System.out.println (item.toString());  
             }
     }
-
+    
     /**
      * Return the room that is reached if we go from this room in direction
      * "direction". If there is no room in that direction, return null.
