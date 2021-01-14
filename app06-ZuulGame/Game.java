@@ -36,7 +36,7 @@ public class Game
         player = new Player();
     }
     
-    public void setSpawn()
+    private void setSpawn()
     {
         currentRoom = map.getSpawn();
     }
@@ -53,9 +53,7 @@ public class Game
         // execute them until the game is over.
                 
         boolean finished = false;
-        
-        
-        
+
         while (! finished) 
         {
             Command command = parser.getCommand();
