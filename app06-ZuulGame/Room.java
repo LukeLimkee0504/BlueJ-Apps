@@ -22,7 +22,7 @@ public class Room
     private String description;
     private String inspection;
     private HashMap<String, Room> exits;        // stores exits of this room.
-    private ArrayList<Item> items;              // stores items of this room.
+    private ArrayList<Item> items = new ArrayList<Item>();
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -89,7 +89,7 @@ public class Room
         return returnString;
     }
     
-    public ArrayList getItemsArray()
+    public ArrayList<Item> getItemsArray()
     {
        return items;
     }

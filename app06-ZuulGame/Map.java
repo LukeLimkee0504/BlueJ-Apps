@@ -24,11 +24,11 @@ public class Map
     public void createMap()
     {
         Room outside, mainHall, kitchen, masterBedroom, library, guestRoom, upstairsLanding, secretRoom;
-        Item book, key, pocketWatch, hierloom;
+        Item book, key, pocketWatch, hierloom, goldenPlate;
       
         // create the rooms
         outside = new Room("outside the main entrance of the manor", "you see the outside of the manor the door wide open inviting you in, cold air blowing towards you");
-        mainHall = new Room("in the main hall", "you find yourself in a huge empty hall with dimly lit candles all around");
+        mainHall = new Room("in the main hall", "you find yourself in a huge empty hall with dimly lit candles all around, a small book lays on a table");
         kitchen = new Room("in the manor kitchen", "the kitchen is cold with rusty utensils scattered around the room");
         masterBedroom = new Room("in the master bedroom", "there is a thick layer of dust around the room however you spy a small pocket watch beside the bed, looks valuable");
         library = new Room("in a huge library", "you peer around at the many books and notice a slight gap between two of the books and engraved under is a key symbol");
@@ -38,15 +38,17 @@ public class Map
         
         //create items
         book = new Item("Book", 100);
-        key = new Item("Key", 100);
-        pocketWatch = new Item("Pocket Watch", 100);
-        hierloom= new Item("Hierloom", 100);
+        key = new Item("Key", 500);
+        pocketWatch = new Item("Pocket Watch", 300);
+        hierloom = new Item("Hierloom", 1000);
+        goldenPlate = new Item ("Golden Plate", 600);
         
         //initialise room items
         mainHall.getItemsArray().add(book);
         masterBedroom.getItemsArray().add(pocketWatch);
         secretRoom.getItemsArray().add(hierloom);
         guestRoom.getItemsArray().add(key);
+        kitchen.getItemsArray().add(goldenPlate);
         
         // initialise room exits
         outside.setExit("north", mainHall);

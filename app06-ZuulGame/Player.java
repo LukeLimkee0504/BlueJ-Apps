@@ -11,7 +11,7 @@ public class Player
     // instance variables - replace the example below with your own
     private int energy;
     private int score;
-    private ArrayList<Item> inventory;              // stores items of this room
+    public ArrayList<Item> inventory = new ArrayList<Item>();            // stores items of this room
 
     /**
      * Constructor for objects of class Player
@@ -33,6 +33,11 @@ public class Player
         return score;
     }
     
+    public void addScore(int poop)
+    {
+        score = score + poop;
+    }
+    
     public void useEnergy(int amount)
     {
         energy = energy - amount;
@@ -42,5 +47,6 @@ public class Player
     {
         inventory.add(item);
     }
+    
     
 }
