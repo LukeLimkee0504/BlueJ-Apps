@@ -1,106 +1,106 @@
-import java.util.ArrayList;
-/**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
- * 
- *  To play this game, create an instance of this class and call the "play"
- *  method.
- * 
- *  This main class creates and initialises all the others: it creates all
- *  rooms, creates the parser and starts the game.  It also evaluates and
- *  executes the commands that the parser returns.
- * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
- * 
- * Modified and extended by Luke Lim-kee
- */
-
-public class Game 
-{
-    private Parser parser;
-    private Room currentRoom;
-    private Player player;
-    private Map map;
-        
+    import java.util.ArrayList;
     /**
-     * Create the game and initialise its internal map.
+     *  This class is the main class of the "World of Zuul" application. 
+     *  "World of Zuul" is a very simple, text based adventure game.  Users 
+     *  can walk around some scenery. That's all. It should really be extended 
+     *  to make it more interesting!
+     * 
+     *  To play this game, create an instance of this class and call the "play"
+     *  method.
+     * 
+     *  This main class creates and initialises all the others: it creates all
+     *  rooms, creates the parser and starts the game.  It also evaluates and
+     *  executes the commands that the parser returns.
+     * 
+     * @author  Michael Kölling and David J. Barnes
+     * @version 2016.02.29
+     * 
+     * Modified and extended by Luke Lim-kee
      */
-    public Game() 
-    {
-        map = new Map();
-        map.createMap();
-        setSpawn();
-        parser = new Parser();
-        player = new Player();
-    }
     
-    private void setSpawn()
+    public class Game 
     {
-        currentRoom = map.getSpawn();
-    }
-
-    /**
-     *  Main play routine.  Loops until end of play.
-     */
-    public void play() 
-    {            
-        printWelcome();
-
-        // Enter the main command loop.  Here we repeatedly read commands and
-        // if the players health reaches zero the game end. 
-        // execute them until the game is over.
-                
-        boolean finished = false;
-
-        while (! finished) 
-        {
-            Command command = parser.getCommand();
-            finished = processCommand(command);
+        private Parser parser;
+        private Room currentRoom;
+        private Player player;
+        private Map map;
             
-            if (player.getEnergy() == 0)
+        /**
+         * Create the game and initialise its internal map.
+         */
+        public Game() 
         {
-            System.out.println("--------------------------------------------------------");
-            System.out.println("You pass out from exuastion and the world fades to black");
-            System.out.println("");
-            System.out.println("---------------------GAME OVER-------------------------");
-            System.out.println("Final score - " + (player.getScore()));
-            System.out.println("--------------------------------------------------------");
-            finished = true;
-        }
+            map = new Map();
+            map.createMap();
+            setSpawn();
+            parser = new Parser();
+            player = new Player();
         }
         
-        System.out.println("Thank you for playing.  Good bye.");
-    }
-
-    /**
-     * Print out the opening message for the player.
-     */
-    private void printWelcome()
-    {
-        System.out.println();
-        System.out.println("Welcome to Durst Manor!");
-        System.out.println("Your goal is to get into the secret room within the manor and steal the family heirloom.");
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
-        System.out.println();
-        System.out.println(currentRoom.getLongDescription());
-    }
-
-    /**
-     * Given a command, process (that is: execute) the command.
-     * @param command The command to be processed.
-     * @return true If the command ends the game, false otherwise.
-     */
-    private boolean processCommand(Command command) 
-    {
-        boolean wantToQuit = false;
-
-        CommandWord commandWord = command.getCommandWord();
-
-        switch (commandWord) 
+        private void setSpawn()
         {
+            currentRoom = map.getSpawn();
+        }
+    
+        /**
+         *  Main play routine.  Loops until end of play.
+         */
+        public void play() 
+        {            
+            printWelcome();
+    
+            // Enter the main command loop.  Here we repeatedly read commands and
+            // if the players health reaches zero the game end. 
+            // execute them until the game is over.
+                    
+            boolean finished = false;
+    
+            while (! finished) 
+            {
+                Command command = parser.getCommand();
+                finished = processCommand(command);
+                
+                if (player.getEnergy() == 0)
+            {
+                System.out.println("--------------------------------------------------------");
+                System.out.println("You pass out from exuastion and the world fades to black");
+                System.out.println("");
+                System.out.println("---------------------GAME OVER-------------------------");
+                System.out.println("Final score - " + (player.getScore()));
+                System.out.println("--------------------------------------------------------");
+                finished = true;
+            }
+            }
+            
+            System.out.println("Thank you for playing.  Good bye.");
+        }
+    
+        /**
+         * Print out the opening message for the player.
+         */
+        private void printWelcome()
+        {
+            System.out.println();
+            System.out.println("Welcome to Durst Manor!");
+            System.out.println("Your goal is to get into the secret room within the manor and steal the family heirloom.");
+            System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
+            System.out.println();
+            System.out.println(currentRoom.getLongDescription());
+        }
+    
+        /**
+         * Given a command, process (that is: execute) the command.
+         * @param command The command to be processed.
+         * @return true If the command ends the game, false otherwise.
+         */
+        private boolean processCommand(Command command) 
+        {
+            boolean wantToQuit = false;
+    
+            CommandWord commandWord = command.getCommandWord();
+    
+            switch (commandWord) 
+            {
             case UNKNOWN:
                 System.out.println("I don't know what you mean...");
                 break;
@@ -119,6 +119,10 @@ public class Game
             
             case PICKUP:
                 pickupItem();
+                break;
+                
+            case EAT:  
+                eat();
                 break;
                 
             case QUIT:
@@ -162,10 +166,12 @@ public class Game
         // Try to leave current room.
         Room nextRoom = currentRoom.getExit(direction);
 
-        if (nextRoom == null) {
+        if (nextRoom == null)
+          {
             System.out.println("There is no exit that way!");
-        }
-        else {
+          }
+        else  
+        {
             player.useEnergy(20);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
@@ -179,6 +185,12 @@ public class Game
     {
         ArrayList<Item> tempItems = currentRoom.getItemsArray();
         
+        if (currentRoom.getFoodAmount() > 0) 
+        {
+            player.addFood(currentRoom.getFoodAmount());
+            currentRoom.removeFood();
+        }
+      
         for (Item item : tempItems)
         {
             player.addToInventory(item);
@@ -201,6 +213,22 @@ public class Game
         currentRoom.printItems();
     }
     
+    private void eat()
+    {
+        
+        if(player.getFood() > 0)
+        {
+            player.removeFood(1);
+            player.addEnergy(100);
+            System.out.println("You take some time to eat and rest");
+            System.out.println("You now have " + (player.getEnergy()) + (" energy and ") + (player.getFood()) + (" food"));
+        }
+        else
+        {
+            System.out.println("You dont have any food!");
+        }
+    }
+   
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
