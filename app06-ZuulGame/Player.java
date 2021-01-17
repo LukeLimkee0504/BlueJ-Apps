@@ -11,6 +11,7 @@ public class Player
     // instance variables - replace the example below with your own
     private int energy;
     private int score;
+    private int food;
     public ArrayList<Item> inventory = new ArrayList<Item>();            // stores items of this room
 
     /**
@@ -21,6 +22,7 @@ public class Player
         // initialise energy to max and score to 0 
         energy = 500;
         score = 0;
+        food = 0;
     }
     
     public int getEnergy()
@@ -33,9 +35,29 @@ public class Player
         return score;
     }
     
-    public void addScore(int poop)
+    public int getFood()
     {
-        score = score + poop;
+        return food;
+    }
+    
+    public void addFood(int amount)
+    {
+        food = food + amount;
+    }
+    
+    public void removeFood(int amount)
+    {
+        food = food - amount;
+    }
+    
+    public void addScore(int value)
+    {
+        score = score + value;
+    }
+    
+    public void addEnergy(int amount)
+    {
+        energy = energy + amount;
     }
     
     public void useEnergy(int amount)
@@ -46,6 +68,15 @@ public class Player
     public void addToInventory(Item item)
     {
         inventory.add(item);
+    }
+    
+    public Item getInventory()
+    {
+       for(Item item : inventory)
+            {
+               return item;
+            }
+            return null;
     }
     
     
