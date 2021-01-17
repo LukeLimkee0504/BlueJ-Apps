@@ -34,6 +34,7 @@ public class Room
     {
         this.description = description;
         this.inspection = inspection;
+        this.food = food;
         items = new ArrayList<>();
         exits = new HashMap<>();
     }
