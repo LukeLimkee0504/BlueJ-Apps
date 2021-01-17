@@ -125,6 +125,10 @@
                 eat();
                 break;
                 
+            case INVENTORY:  
+                player.printInventory();
+                break;
+                
             case QUIT:
                 wantToQuit = quit(command);
                 break;
@@ -185,10 +189,12 @@
     {
         ArrayList<Item> tempItems = currentRoom.getItemsArray();
         
-        if (currentRoom.getFoodAmount() > 0) 
+        int roomFood;
+        roomFood = currentRoom.getFoodAmount();
+        
+        if (roomFood > 0) 
         {
-            player.addFood(currentRoom.getFoodAmount());
-            currentRoom.removeFood();
+            player.addFood(roomFood);
         }
       
         for (Item item : tempItems)
@@ -196,7 +202,7 @@
             player.addToInventory(item);
             int itemvalue = item.getValue();
             player.addScore(itemvalue);
-            System.out.println("You picked up a " + (item));
+            System.out.println("You picked up a " + (item) + (" and ") + (player.getFood()) + (" food!"));
             System.out.println("Your score is now " + player.getScore());
         }       
     }
@@ -211,6 +217,7 @@
         System.out.println("----------------------------------------------");
         System.out.println("Items:"); 
         currentRoom.printItems();
+        System.out.println("Food: " + (currentRoom.getFoodAmount())); 
     }
     
     private void eat()
