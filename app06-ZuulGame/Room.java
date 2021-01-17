@@ -23,13 +23,14 @@ public class Room
     private String inspection;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private ArrayList<Item> items = new ArrayList<Item>();
+    private int food;
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description, String inspection) 
+    public Room(String description, String inspection, int food) 
     {
         this.description = description;
         this.inspection = inspection;
@@ -120,6 +121,16 @@ public class Room
     public Room getExit(String direction) 
     {
         return exits.get(direction);
+    }
+    
+    public int getFoodAmount()
+    {
+        return food;
+    }
+    
+    public void removeFood()
+    {
+        food = 0;
     }
 }
 
