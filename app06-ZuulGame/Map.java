@@ -27,14 +27,14 @@ public class Map
         Item book, key, pocketWatch, hierloom, goldenPlate;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the manor", "you see the outside of the manor the door wide open inviting you in, cold air blowing towards you");
-        mainHall = new Room("in the main hall", "you find yourself in a huge empty hall with dimly lit candles all around, a small book lays on a table");
-        kitchen = new Room("in the manor kitchen", "the kitchen is cold with rusty utensils scattered around the room");
-        masterBedroom = new Room("in the master bedroom", "there is a thick layer of dust around the room however you spy a small pocket watch beside the bed, looks valuable");
-        library = new Room("in a huge library", "you peer around at the many books and notice a slight gap between two of the books and engraved under is a key symbol");
-        guestRoom = new Room("in a small guest room", "you notice this room in pretty well kept and upon snooping around more you notice a small key in the bedside table");
-        upstairsLanding = new Room("on the upstairs landing", "you look down from above at the great hall as you hear the tikking of the clock");
-        secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for");
+        outside = new Room("outside the main entrance of the manor", "you see the outside of the manor the door wide open inviting you in, cold air blowing towards you", 0);
+        mainHall = new Room("in the main hall", "you find yourself in a huge empty hall with dimly lit candles all around, a small book lays on a table", 0);
+        kitchen = new Room("in the manor kitchen", "the kitchen is cold with rusty utensils scattered around the room", 2);
+        masterBedroom = new Room("in the master bedroom", "there is a thick layer of dust around the room however you spy a small pocket watch beside the bed, looks valuable", 0);
+        library = new Room("in a huge library", "you peer around at the many books and notice a slight gap between two of the books and engraved under is a key symbol", 0);
+        guestRoom = new Room("in a small guest room", "you notice this room in pretty well kept and upon snooping around more you notice a small key in the bedside table", 1);
+        upstairsLanding = new Room("on the upstairs landing", "you look down from above at the great hall as you hear the tikking of the clock", 0);
+        secretRoom = new Room("in a dusty old hidden room", "you notice a small glass box, inside is a golden heart shaped locked, this is what you came here for", 2);
         
         //create items
         book = new Item("Book", 100);
@@ -72,7 +72,7 @@ public class Map
         masterBedroom.setExit("west", upstairsLanding);
         
         // (need to create unlock function before accessable)
-        //  library.setExit("south", secretRoom);
+        library.setExit("south", secretRoom);
         library.setExit("east", mainHall);
         
         spawn = outside;
