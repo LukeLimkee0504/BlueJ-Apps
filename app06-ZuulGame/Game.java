@@ -70,6 +70,17 @@
                 System.out.println("--------------------------------------------------------");
                 finished = true;
             }
+            
+                if (player.getScore() > 1000)
+            {
+                System.out.println("--------------------------------------------------------");
+                System.out.println("You have collected enough valuables to last you a life time");
+                System.out.println("");
+                System.out.println("---------------------YOU WIN-------------------------------");
+                System.out.println("-----------------CONGRATULATIONS---------------------------");
+                System.out.println("-----------------------------------------------------------");
+                finished = true;
+            }
             }
             
             System.out.println("Thank you for playing.  Good bye.");
@@ -82,7 +93,7 @@
         {
             System.out.println();
             System.out.println("Welcome to Durst Manor!");
-            System.out.println("Your goal is to get into the secret room within the manor and steal the family heirloom.");
+            System.out.println("Your goal is to get as much loot as possible.");
             System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
             System.out.println();
             System.out.println(currentRoom.getLongDescription());
@@ -195,6 +206,7 @@
         if (roomFood > 0) 
         {
             player.addFood(roomFood);
+            currentRoom.removeFood();
         }
       
         for (Item item : tempItems)
@@ -222,7 +234,6 @@
     
     private void eat()
     {
-        
         if(player.getFood() > 0)
         {
             player.removeFood(1);
