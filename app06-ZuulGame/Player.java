@@ -25,6 +25,17 @@ public class Player
         food = 0;
     }
     
+    public String printInventory()
+    {
+        System.out.println (" You open up your bag, inside you have");
+        
+        for(Item item : inventory)
+            { 
+                System.out.println (item.toString());  
+            }
+            return null;
+    }
+    
     public int getEnergy()
     {
         return energy;
