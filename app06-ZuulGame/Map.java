@@ -50,7 +50,7 @@ public class Map
         locket = new Item("Heart Locket", 1000);
         goldenPlate = new Item ("Golden Plate", 600);
         fancyClothes = new Item ("Fancy Clothes", 500);
-        candleHolder = new Item ("Candle Holder", 700);
+        candleHolder = new Item ("Candle Holder", 500);
         cash = new Item ("Stack of cash", 500);
         
         //initialise room items
@@ -61,6 +61,7 @@ public class Map
         kitchen.getItemsArray().add(goldenPlate);
         closet.getItemsArray().add(fancyClothes);
         diningRoom.getItemsArray().add(candleHolder);
+        study.getItemsArray().add(cash);
         
         // initialise room exits
         outside.setExit("north", mainHall);
