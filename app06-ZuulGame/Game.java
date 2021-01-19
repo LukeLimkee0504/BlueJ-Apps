@@ -214,9 +214,11 @@
             player.addToInventory(item);
             int itemvalue = item.getValue();
             player.addScore(itemvalue);
+            currentRoom.removeRoomItems();
             System.out.println("You picked up a " + (item) + (" and ") + (player.getFood()) + (" food!"));
             System.out.println("Your score is now " + player.getScore());
-        }       
+            return;
+        }         
     }
     
     private void inspectRoom()

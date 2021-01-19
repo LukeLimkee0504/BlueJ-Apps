@@ -91,6 +91,15 @@ public class Room
         return returnString;
     }
     
+    public void removeRoomItems()
+    {
+        for (Item item : items)
+        {
+            items.remove(item);
+            return;
+        } 
+    }
+    
     public ArrayList<Item> getItemsArray()
     {
        return items;
