@@ -207,6 +207,7 @@
         {
             player.addFood(roomFood);
             currentRoom.removeFood();
+            System.out.println("You now have " + (player.getFood()) + (" food"));
         }
       
         for (Item item : tempItems)
@@ -215,10 +216,11 @@
             int itemvalue = item.getValue();
             player.addScore(itemvalue);
             currentRoom.removeRoomItems();
-            System.out.println("You picked up a " + (item) + (" and ") + (player.getFood()) + (" food!"));
+            System.out.println("You picked up a " + (item));
             System.out.println("Your score is now " + player.getScore());
             return;
-        }         
+        }   
+        
     }
     
     private void inspectRoom()
