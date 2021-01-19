@@ -71,7 +71,7 @@
                 finished = true;
             }
             
-                if (player.getScore() > 1000)
+                if (player.getScore() >= 4000)
             {
                 System.out.println("--------------------------------------------------------");
                 System.out.println("You have collected enough valuables to last you a life time");
