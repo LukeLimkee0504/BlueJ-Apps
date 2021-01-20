@@ -46,7 +46,7 @@
         }
     
         /**
-         *  Main play routine.  Loops until player runs out of energy or reaches 3000 score.
+         *  Main play routine.  Loops until player runs out of energy or reaches 2500 score.
          */
         public void play() 
         {            
@@ -74,7 +74,7 @@
                 finished = true;
             }
             
-                if (player.getScore() >= 4000)
+                if (player.getScore() >= 2500)
             {
                 System.out.println("--------------------------------------------------------");
                 System.out.println("You have collected enough valuables to last you a life time");
