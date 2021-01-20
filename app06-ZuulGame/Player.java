@@ -2,8 +2,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Player here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Luke Lim-kee)
+ * @version (20/1/21)
  */
 public class Player
 
@@ -25,6 +25,9 @@ public class Player
         food = 0;
     }
     
+     /**
+     * @return string off all items in the players inventory
+     */
     public String printInventory()
     {
         System.out.println (" You open up your bag, inside you have");
@@ -36,51 +39,81 @@ public class Player
             return null;
     }
     
+     /**
+     * @return player energy
+     */
     public int getEnergy()
     {
         return energy;
     }
     
+     /**
+     * @return player score
+     */
     public int getScore()
     {
         return score;
     }
     
+     /**
+     * @return player food amount
+     */
     public int getFood()
     {
         return food;
     }
     
+     /**
+     * @adds an int of food to player food
+     */
     public void addFood(int amount)
     {
         food = food + amount;
     }
     
+     /**
+     * @remove an int of food to player food
+     */
     public void removeFood(int amount)
     {
         food = food - amount;
     }
     
+      /**
+     * @add an int value to the players score
+     */
     public void addScore(int value)
     {
         score = score + value;
     }
     
+      /**
+     * @add an int value to the players energuy
+     */
     public void addEnergy(int amount)
     {
         energy = energy + amount;
     }
     
+      /**
+     * @remove an int amount of energy from the players energy
+     */
     public void useEnergy(int amount)
     {
         energy = energy - amount;
     }
     
+      /**
+     * @recives an items and adds it tot he player inventory
+     */
     public void addToInventory(Item item)
     {
         inventory.add(item);
     }
     
+      /**
+     * @returns all items in the players inventory
+     */
     public Item getInventory()
     {
        for(Item item : inventory)

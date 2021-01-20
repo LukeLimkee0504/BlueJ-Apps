@@ -29,6 +29,8 @@ public class Room
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
      * @param description The room's description.
+     * @param inspection The rooms inspection description.
+     * @param food The room's amount of food.
      */
     public Room(String description, String inspection, int food) 
     {
@@ -69,6 +71,9 @@ public class Room
         return "You are " + description + ".\n\n" + getExitString();
     }
     
+     /**
+     * @return The inspection description of the room
+     */
      public String getInspectDescription()
     {
         return inspection;
@@ -91,6 +96,9 @@ public class Room
         return returnString;
     }
     
+    /**
+     * removes all items from a room
+     */
     public void removeRoomItems()
     {
         for (Item item : items)
@@ -100,11 +108,17 @@ public class Room
         } 
     }
     
+    /**
+     * @return The rooms arraylist
+     */
     public ArrayList<Item> getItemsArray()
     {
        return items;
     }
     
+    /**
+     * @return a string containing all the names of the items in the room
+     */
     public String getItemsString()
     {
        for(Item item : items)
@@ -114,6 +128,9 @@ public class Room
             return null;
     }
     
+    /**
+     * @return a string containing all the names of the items in the room
+     */
     public void printItems()
     {
         for(Item item : items)
@@ -133,11 +150,17 @@ public class Room
         return exits.get(direction);
     }
     
+    /**
+     * @return a in amount of food in a room
+     */
     public int getFoodAmount()
     {
         return food;
     }
     
+    /**
+     * remove all the food in a room
+     */
     public void removeFood()
     {
         food = 0;

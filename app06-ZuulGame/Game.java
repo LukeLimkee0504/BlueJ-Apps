@@ -37,13 +37,16 @@
             player = new Player();
         }
         
+       /**
+        * sets the spawn from the map object
+        */
         private void setSpawn()
         {
             currentRoom = map.getSpawn();
         }
     
         /**
-         *  Main play routine.  Loops until end of play.
+         *  Main play routine.  Loops until player runs out of energy or reaches 3000 score.
          */
         public void play() 
         {            
@@ -196,6 +199,12 @@
         }
     }
     
+    /**
+     * Copies the room array list into a tempororary arraylist and then add all those items
+     * into the players inventory and then removes them from the room inventory.
+     * adds an amout of food into the players food equal to the amount in the room and then
+     * sets the room food amount to 0
+     */
     private void pickupItem()
     {
         ArrayList<Item> tempItems = currentRoom.getItemsArray();
@@ -223,6 +232,10 @@
         
     }
     
+    /**
+     * consumes 20 of the players energy and then print out the current rooms inspect description.
+     * print out all the items found in the room and all food in the room.
+     */
     private void inspectRoom()
     {
         player.useEnergy(20);
@@ -236,6 +249,12 @@
         System.out.println("Food: " + (currentRoom.getFoodAmount())); 
     }
     
+    /**
+     * removes 1 food from th eplayers food value 
+     * adds 100 energy to the  players energy value
+     * print out how much food the player has left as well as thier energy
+     * if the player has no food it will tell them
+     */
     private void eat()
     {
         if(player.getFood() > 0)

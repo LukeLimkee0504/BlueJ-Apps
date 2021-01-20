@@ -2,8 +2,8 @@
 /**
  * Write a description of class Map here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Luke Limkee)
+ * @version (20/1/21)
  */
 public class Map
 {
@@ -102,6 +102,9 @@ public class Map
         spawn = outside;
     }
     
+      /**
+     * @returns the current map spawn room
+     */
     public Room getSpawn()
     {
         return spawn;

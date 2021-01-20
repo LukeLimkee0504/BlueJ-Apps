@@ -20,17 +20,25 @@ public class Item
        this.value = value;
     }
 
-
+    /**
+     * @return a string containing the name of an item
+     */
      public String getName()
     {
         return itemName;
     }
     
+    /**
+     * @return a string containing the name of an item
+     */
     public String toString()
     {
         return itemName;
     }
     
+    /**
+     * @return a iunt containing score value of an item
+     */
     public int getValue()
     {
         return value;
