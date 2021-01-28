@@ -74,6 +74,8 @@ public class Map
         
         diningRoom.setExit("west", kitchen);
         
+        closet.setExit("north", masterBedroom);
+        
         mainHall.setExit("north", upstairsLanding);
         mainHall.setExit("east", kitchen);
         mainHall.setExit("south", outside);
